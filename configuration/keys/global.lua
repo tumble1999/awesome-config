@@ -85,7 +85,7 @@ local globalKeys =
     {description = 'Lock the screen', group = 'awesome'}
   ),
   awful.key(
-    {modkey},
+    {'Control','Shift'},
     'Print',
     function()
       awful.util.spawn_with_shell(apps.default.delayed_screenshot)
@@ -93,7 +93,7 @@ local globalKeys =
     {description = 'Mark an area and screenshot it 10 seconds later (clipboard)', group = 'screenshots (clipboard)'}
   ),
   awful.key(
-    {},
+    {altkey},
     'Print',
     function()
       awful.util.spawn_with_shell(apps.default.screenshot)

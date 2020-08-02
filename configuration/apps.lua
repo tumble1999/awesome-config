@@ -14,7 +14,7 @@ return {
     quake = 'alacritty',
     screenshot = '~/.config/awesome/configuration/utils/screenshot -m',
     region_screenshot = '~/.config/awesome/configuration/utils/screenshot -r',
-    delayed_screenshot = 'sleep 10 ; ~/.config/awesome/configuration/utils/screenshot -r',
+    delayed_screenshot = '~/.config/awesome/configuration/utils/screenshot --delayed -r',
     
     -- Editing these also edits the default program
     -- associated with each tag/workspace
