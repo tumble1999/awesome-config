@@ -6,6 +6,7 @@ local clickable_container = require('widget.material.clickable-container')
 local icons = require('theme.icons')
 local watch = require('awful.widget.watch')
 local spawn = require('awful.spawn')
+local awful = require('awful')
 
 local slider =
   wibox.widget {
@@ -13,20 +14,22 @@ local slider =
   widget = mat_slider
 }
 
+-- This is only for Laptop screens!
 slider:connect_signal(
   'property::value',
   function()
-    spawn('xbacklight -set ' .. math.max(slider.value, 5))
+    awful.util.spawn_with_shell("xrandr --output $(xrandr | grep LVDS | awk '{print $1}') --brightness " .. math.max(slider.value/99))  
   end
 )
 
+-- this does not properly work when using xrandr
 watch(
-  [[bash -c "xbacklight -get"]],
+  [[bash -c "xbacklight --get"]],
   1,
   function(widget, stdout, stderr, exitreason, exitcode)
     local brightness = string.match(stdout, '(%d+)')
 
-    slider:set_value(tonumber(brightness))
+    slider:set_value(tonumber(brightness)*100)
     collectgarbage('collect')
   end
 )
