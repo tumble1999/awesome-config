@@ -29,6 +29,12 @@ local tags = {
     screen = 1
   },
   {
+    icon = icons.vm,
+    type = 'vms',
+    defaultApp = apps.default.game,
+    screen = 1
+  },
+  {
     icon = icons.folder,
     type = 'files',
     defaultApp = apps.default.files,
