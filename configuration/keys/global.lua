@@ -109,7 +109,7 @@ local globalKeys =
     {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}
   ),
   awful.key(
-    {'Control'},
+    {modkey},
     'Print',
     function()
       awful.util.spawn_with_shell(apps.default.ss_and_edit_screenshot)
