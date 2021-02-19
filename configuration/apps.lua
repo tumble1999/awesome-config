@@ -12,9 +12,10 @@ return {
     rofi = rofi_command,
     lock = 'i3lock-fancy',
     quake = 'alacritty',
-    screenshot = '~/.config/awesome/configuration/utils/screenshot -m',
-    region_screenshot = '~/.config/awesome/configuration/utils/screenshot -r',
-    delayed_screenshot = '~/.config/awesome/configuration/utils/screenshot --delayed -r',
+    screenshot = 'screenshot -m -s', --'~/.config/awesome/configuration/utils/screenshot -m',
+    region_screenshot = 'screenshot -r -s', --'~/.config/awesome/configuration/utils/screenshot -r',
+    delayed_screenshot = 'screenshot -d 10 -r', --'~/.config/awesome/configuration/utils/screenshot --delayed -r',
+    ss_and_edit_screenshot = 'screenshot -r',
     
     -- Editing these also edits the default program
     -- associated with each tag/workspace
