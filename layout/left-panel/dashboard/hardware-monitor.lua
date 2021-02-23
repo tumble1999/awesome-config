@@ -1,18 +1,47 @@
 local wibox = require('wibox')
-local mat_list_item = require('widget.material.list-item')
+local gears = require('gears')
+local beautiful = require('beautiful')
+local dpi = beautiful.xresources.apply_dpi
+
+local hardware_header = wibox.widget {
+	text = 'Hardware Monitor',
+	font = 'Inter Regular 12',
+	align = 'left',
+	valign = 'center',
+	widget = wibox.widget.textbox
+
+}
 
 return wibox.widget {
-  wibox.widget {
-    wibox.widget {
-      text = 'Hardware monitor',
-      font = 'Roboto medium 12',
-      widget = wibox.widget.textbox
-    },
-    widget = mat_list_item
-  },
-  require('widget.cpu.cpu-meter'),
-  require('widget.ram.ram-meter'),
-  require('widget.temperature.temperature-meter'),
-  require('widget.harddrive.harddrive-meter'),
-  layout = wibox.layout.fixed.vertical
+	layout = wibox.layout.fixed.vertical,
+	{
+		{
+			hardware_header,
+			left = dpi(24),
+			right = dpi(24),
+			widget = wibox.container.margin
+		},
+		bg = beautiful.groups_title_bg,
+		shape = function(cr, width, height)
+			gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.groups_radius) 
+		end,
+		forced_height = dpi(35),
+		widget = wibox.container.background
+		
+	},
+	{
+		{
+			layout = wibox.layout.fixed.vertical,
+			require('widget.cpu-meter'),
+			require('widget.ram-meter'),
+			require('widget.temperature-meter'),
+			require('widget.harddrive-meter')
+		},
+		bg = beautiful.groups_bg,
+		shape = function(cr, width, height)
+			gears.shape.partially_rounded_rect(cr, width, height, false, false, true, true, beautiful.groups_radius) 
+		end,
+		widget = wibox.container.background
+	}
+
 }

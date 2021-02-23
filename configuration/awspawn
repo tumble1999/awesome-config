@@ -8,10 +8,9 @@
 
 # List of applications to run
 # the script $HOME/.config/awesomestart
-# is intended to be a copy of this file
-# to allow out of tree autostart programs
+# is intended to be a copy of this file (without the "$HOME/.config/awesomestart" line)
+# to allow out of git tree autostart programs
 APPS=(
-    kdeconnect-indicator
     radeon-profile
     $HOME/.config/awesomestart
     )
