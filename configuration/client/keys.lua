@@ -105,6 +105,95 @@ local client_keys = awful.util.table.join(
 		{description = 'toggle floating', group = 'client'}
 	),
 	awful.key(
+		{altkey, 'Control'},
+		'Right',
+		function()
+			awful.client.focus.byidx(1)
+			if client.focus then
+				client.focus:raise()
+			end
+		end,
+		{description = 'Give focus to next window', group = 'client'}
+	),
+	awful.key(
+		{altkey, 'Control'},
+		'Left',
+		function()
+			awful.client.focus.byidx(-1)
+			if client.focus then
+				client.focus:raise()
+			end
+		end,
+		{description = 'Give focus to previous window', group = 'client'}
+	),
+	-- Move client to tag below
+	awful.key(
+		{modkey, 'Shift'},
+		'Down',
+		function()
+			if client.focus then
+				-- get current tag
+				local t = client.focus and client.focus.first_tag or nil
+				if t == nil then
+					return
+				end
+				-- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
+				local tag = client.focus.screen.tags[(t.name % 9) + 1]
+				awful.client.movetotag(tag)
+				awful.tag.viewnext()
+			end
+		end,
+		{description = 'Move client to tag below', group = 'client'},
+		descr_move
+	),
+	-- Move client to tag above
+	awful.key(
+		{modkey, 'Shift'},
+		'Up',
+		function()
+			if client.focus then
+				-- get current tag
+				local t = client.focus and client.focus.first_tag or nil
+				if t == nil then
+					return
+				end
+				-- get previous tag (modulo 9 excluding 0 to wrap from 1 to 9)
+				local tag = client.focus.screen.tags[(t.name - 2) % 9 + 1]
+				awful.client.movetotag(tag)
+				awful.tag.viewprev()
+			end
+		end,
+		{description = 'Move client to tag above', group = 'client'},
+		descr_move
+	),
+	-- Move client tab to the right
+	awful.key(
+		{ modkey, 'Shift'  },
+		'Right',
+		function ()
+			awful.client.swap.byidx(1)
+		end,
+		{description = 'swap with next client by index', group = 'client'}
+	),
+	-- Move client tab to the left
+	awful.key(
+		{ modkey, 'Shift' },
+		'Left',
+		function ()
+			awful.client.swap.byidx(-1)
+		end,
+		{description = 'swap with next client by index', group = 'client'}
+	),
+	-- Screen management
+	awful.key(
+		{modkey},
+		'o',
+		function()
+			client.focus:move_to_screen()
+		end,
+		{description = 'Move client to next screen', group = 'client'}
+	),
+	awful.key(
 		{modkey},
 		'Up',
 		function(c)
