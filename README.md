@@ -59,7 +59,7 @@ Icon=/usr/share/pixmaps/awesome.xpm
 Keywords=Window manager
 ```
 
-### 2) Clone the configuration
+### 3) Clone the configuration
 
 ```
 git clone https://github.com/HikariKnight/material-awesome.git ~/.config/awesome
@@ -77,11 +77,11 @@ Awesome4.2
 git clone -b awesome-4.2 https://github.com/PapyElGringo/material-awesome.git ~/.config/awesome
 ```
 
-### 3) Set the themes
+### 4) Set the themes
 Start **lxappearance** to active the **icon** theme and **GTK** theme
 Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-0/settings.ini`, for the change to also show up in applications run as root, copy the 2 files over to their respective place in `/root`.
 
-### 4) Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
+### 5) Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
 First install `qt5-style-plugins` (or `qt5-style-gtk2`) and add this to the bottom of your `/etc/environment`
 
 ```bash
@@ -92,7 +92,7 @@ QT_QPA_PLATFORMTHEME=gtk2
 The first variable fixes most indicators (especially electron based ones!), the second tells most Qt and KDE applications (from your distributions repository) to use your gtk2 theme set through lxappearance.
 
 
-### 5) Do your basic configuration
+### 6) Do your basic configuration
 Open [apps.lua](./configuration/apps.lua) and [config.lua](configuration/config.lua) and make your changes.<br>
 I recommend you to make your own fork of this project!
 
@@ -102,7 +102,7 @@ grep -Ri "what you are searching for" ~/.config/awesome/
 ```
 
 
-### 6) Read the documentation
+### 7) Read the documentation
 The documentation live within the source code.
 
 The project is split in functional directories and in each of them there should be a readme where you can get additionnal informations about the contents of the folder.
