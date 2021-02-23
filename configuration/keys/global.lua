@@ -443,6 +443,14 @@ local global_keys = awful.util.table.join(
 		{description = 'lock the screen', group = 'Utility'}
 	),
 	awful.key(
+		{modkey},
+		'e',
+		function()
+			awful.spawn(apps.utils.emoji_toggle)
+		end,
+		{description = 'Toggle emoji typing using ibus', group = 'Utility'}
+	),
+	awful.key(
 		{modkey}, 
 		'Return',
 		function()
