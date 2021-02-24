@@ -24,7 +24,7 @@ local msg_table = {
 	'Sayonara!',
 	'Ciao!',
 	'Well... bye.',
-	'Go out there and make a difference.'
+	'Go out there and make a difference.',
 	'Change da world. My final message. Goodbye.',
 	'Find out on the next episode of Dragonball Z...',
 	'Choose wisely!'
