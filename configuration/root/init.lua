@@ -53,7 +53,7 @@ root.buttons(
 	            --awesome.emit_signal('module::brightness_osd:show',true)
 		 	--end
 			-- view next tag
-			awful.tag.viewnext
+			awful.tag.viewprev
 		),
 		awful.button(
 			{},
@@ -64,7 +64,7 @@ root.buttons(
 	            --awesome.emit_signal('module::brightness_osd:show',true)
 		 	--end
 			-- view previous tag
-			awful.tag.viewprev
+			awful.tag.viewnext
 		),
 		awful.button(
 			{'Control'},
