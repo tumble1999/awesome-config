@@ -21,6 +21,11 @@ I am pretty much most likely as green as you when it comes to lua, but you can s
 Feel free to @HikariKnight in the issue message too to send me a mail notification!
 
 
+## Known bugs
+* Clicking a notification does not raise the window/application that sent it.
+This seems to be an issue with the new notification api that uses dbus in awesomewm
+
+
 
 ## Installation
 ### Note: the best transition is from gnome or mate to material-awesome as KDE-plasma can break some indicators until plasma is purged entierly.
