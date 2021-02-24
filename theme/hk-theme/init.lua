@@ -36,6 +36,10 @@ theme.system_white_light = '#F8F8F2'
 theme.accent = theme.system_blue_dark
 
 -- Background color
+-- Original version
+--theme.background = '#192933'-- .. '100'
+
+-- Darker version
 theme.background = '#121e25'-- .. '100'
 
 -- Transparent
