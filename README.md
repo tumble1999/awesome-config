@@ -9,9 +9,9 @@ Note: This is my personal config, I am willing to accept pull requests that fix 
 ## What is Material-Awesome?
 An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) mostly following the [Material Design guidelines](https://material.io) with a performant opiniated mouse/keyboard workflow to increase daily productivity and comfort.
 
-| Tiled         | Panel         | Exit screen   |
-|:-------------:|:-------------:|:-------------:|
-|![](https://i.imgur.com/fELCtep.png)|![](https://i.imgur.com/7IthpQS.png)|![](https://i.imgur.com/rcKOLYQ.png)|
+| Tiled         | Panel         | Exit screen   | Notif center  |
+|:-------------:|:-------------:|:-------------:|:-------------:|
+|![](https://i.imgur.com/35ssPBe.png)|![](https://i.imgur.com/BGzDsSO.png)|![](https://i.imgur.com/NEehdQL.png)|![](https://i.imgur.com/dUyI3dG.png)
 
 
 
@@ -19,6 +19,11 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) most
 I am pretty much most likely as green as you when it comes to lua, but you can submit an issue in the issue tracker and me or someone else will attempt to help you if we know the answer.<br>
 
 Feel free to @HikariKnight in the issue message too to send me a mail notification!
+
+
+## Known bugs
+* Clicking a notification does not raise the window/application that sent it.<br>
+This seems to be an issue with the new notification api that uses dbus in awesomewm
 
 
 
