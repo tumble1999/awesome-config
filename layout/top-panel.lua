@@ -89,7 +89,7 @@ local top_panel = function(s, offset)
 			--s.mpd,
 			--s.network,
 			--s.bluetooth,
-			--s.battery,
+			s.battery,
 			clock,
 			layout_box,
 			s.info_center_toggle
