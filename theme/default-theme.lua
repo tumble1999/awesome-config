@@ -129,10 +129,10 @@ local awesome_overrides = function(theme)
 	-- Client Decorations
 
 	-- Borders
-	theme.border_focus = gtk_variable().bg_color
+	theme.border_focus = '#003f6b' --gtk_variable().bg_color
 	theme.border_normal = gtk_variable().base_color
 	theme.border_marked = '#CC9393'
-	theme.border_width = dpi(0)
+	theme.border_width = dpi(1)
 	theme.border_radius = dpi(9)
 
 	-- Decorations
