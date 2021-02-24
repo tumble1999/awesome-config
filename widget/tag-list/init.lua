@@ -144,21 +144,22 @@ local tag_list = function(s)
 						_G.client.focus:toggle_tag(t)
 					end
 				end
-			),
-			awful.button(
-				{},
-				4,
-				function(t)
-					awful.tag.viewprev(t.screen)
-				end
-			),
-			awful.button(
-				{},
-				5,
-				function(t)
-					awful.tag.viewnext(t.screen)
-				end
-			)
+			)--,
+			-- Scrolling on the tag list scrolls 3 tags at once, disabled until i figure out what causes it
+			--awful.button(
+				--{},
+				--4,
+				--function(t)
+					--awful.tag.viewprev(t.screen)
+				--end
+			--),
+			--awful.button(
+				--{},
+				--5,
+				--function(t)
+					--awful.tag.viewnext(t.screen)
+				--end
+			--)
 		),
 		{},
 		list_update,
