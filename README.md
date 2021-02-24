@@ -22,7 +22,7 @@ Feel free to @HikariKnight in the issue message too to send me a mail notificati
 
 
 ## Known bugs
-* Clicking a notification does not raise the window/application that sent it.
+* Clicking a notification does not raise the window/application that sent it.<br>
 This seems to be an issue with the new notification api that uses dbus in awesomewm
 
 
