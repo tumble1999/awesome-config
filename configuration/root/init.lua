@@ -47,20 +47,24 @@ root.buttons(
 		awful.button(
 			{},
 			4,
-		 	function()
-	            awful.spawn('light -A 10',false)
-	            awesome.emit_signal('widget::brightness')
-	            awesome.emit_signal('module::brightness_osd:show',true)
-		 	end
+		 	--function()
+	            --awful.spawn('light -A 10',false)
+	            --awesome.emit_signal('widget::brightness')
+	            --awesome.emit_signal('module::brightness_osd:show',true)
+		 	--end
+			-- view next tag
+			awful.tag.viewnext
 		),
 		awful.button(
 			{},
 			5,
-		 	function()
-	            awful.spawn('light -U 10',false)
-	            awesome.emit_signal('widget::brightness')
-	            awesome.emit_signal('module::brightness_osd:show',true)
-		 	end
+		 	--function()
+	            --awful.spawn('light -U 10',false)
+	            --awesome.emit_signal('widget::brightness')
+	            --awesome.emit_signal('module::brightness_osd:show',true)
+		 	--end
+			-- view previous tag
+			awful.tag.viewprev
 		),
 		awful.button(
 			{'Control'},
