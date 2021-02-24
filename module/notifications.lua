@@ -3,6 +3,7 @@ local wibox = require('wibox')
 local awful = require('awful')
 local ruled = require('ruled')
 local naughty = require('naughty')
+local cst = require("naughty.constants");
 local menubar = require('menubar')
 local beautiful = require('beautiful')
 local dpi = beautiful.xresources.apply_dpi
@@ -81,6 +82,19 @@ ruled.notification.connect_signal(
 		}
 	end
 	)
+
+-- Potential fix to raise windows that made the notification?
+-- see bug https://github.com/awesomeWM/awesome/issues/3182
+naughty.connect_signal('destroyed', function(n, reason)
+    if not n.clients then return end
+		if reason == cst.notification_closed_reason.dismissed_by_user then
+			for _, cli in ipairs(n.clients) do
+				cli.urgent = true
+				cli:emit_signal("request::activate", {raise=true})
+			end
+		end
+	end
+)
 
 -- Error handling
 naughty.connect_signal(
