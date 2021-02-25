@@ -82,7 +82,7 @@ return {
 				--]]
 			},
 			-- Stretch background image across all screens(monitor)
-			stretch = false
+			stretch = true
 		},
 
 		-- This module is not in use, configuration is left here for potential future use!
