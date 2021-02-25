@@ -10,8 +10,8 @@ This is why I recommend you to fork this project and use that to store your own 
 ## What is Material-Awesome?
 An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) mostly following the [Material Design guidelines](https://material.io) with a performant opiniated mouse/keyboard workflow to increase daily productivity and comfort.
 
-| Tiled         | Panel         | Exit screen   | Notif center  |
-|:-------------:|:-------------:|:-------------:|:-------------:|
+| Tiled         | Panel         | Exit screen   | Notification center  |
+|:-------------:|:-------------:|:-------------:|:--------------------:|
 |![](https://i.imgur.com/35ssPBe.png)|![](https://i.imgur.com/BGzDsSO.png)|![](https://i.imgur.com/NEehdQL.png)|![](https://i.imgur.com/dUyI3dG.png)
 
 
