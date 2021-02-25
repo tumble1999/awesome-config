@@ -75,7 +75,7 @@ git clone https://github.com/HikariKnight/material-awesome.git ~/.config/awesome
 
 Awesome4.3-stable
 ```
-git clone -b awesome-4.3-stable https://github.com/HikariKnight/material-awesome.git ~/.config/awesome
+git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git ~/.config/awesome
 ```
 
 Awesome4.2
