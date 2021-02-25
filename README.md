@@ -1,6 +1,6 @@
 ## Material and Mouse driven theme for [AwesomeWM 4.3-git](https://github.com/awesomeWM/awesome)
 
-### Original work by PapyElGringo, updated framework (and what this if forked from) by manilarome. PapyElGringo is now working on [Material-Shell](https://github.com/material-shell/material-shell) instead.
+### Original work by [PapyElGringo](https://github.com/PapyElGringo), updated framework (and what this if forked from) by [manilarome](https://github.com/manilarome). PapyElGringo is now working on [Material-Shell](https://github.com/material-shell/material-shell) instead.
 
 
 Note: This is my personal config, I am willing to accept pull requests that fix bugs or adds features that are missing. As this is pretty much a freetime project by someone who is not familiar with lua, do not expect this to be under super active development by me(as I know little to no lua).
