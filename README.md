@@ -4,6 +4,7 @@
 
 
 Note: This is my personal config, I am willing to accept pull requests that fix bugs or adds features that are missing. As this is pretty much a freetime project by someone who is not familiar with lua, do not expect this to be under super active development by me(as I know little to no lua).
+This is why I recommend you to fork this project and use that to store your own personal config and just use this as a base.
 
 
 ## What is Material-Awesome?
