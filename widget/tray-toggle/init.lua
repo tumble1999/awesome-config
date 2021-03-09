@@ -65,7 +65,7 @@ awesome.connect_signal(
 -- Update icon on start-up
 if screen.primary.systray then
 	if screen.primary.systray.visible then
-		widget.icon:set_image(widget_icon_dir .. 'right-arrow' .. '.svg')
+		widget.icon:set_image(widget_icon_dir .. 'left-arrow' .. '.svg')
 	end
 end
 
