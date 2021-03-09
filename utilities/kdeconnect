@@ -1,5 +1,5 @@
 #!/bin/bash
 #sleep 30
 killall -9 kdeconnect-indicator
-sleep 30 
+sleep 10 
 kdeconnect-indicator
