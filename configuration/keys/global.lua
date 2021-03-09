@@ -429,6 +429,14 @@ local global_keys = awful.util.table.join(
 		{description = 'Toggle emoji typing using ibus', group = 'Utility'}
 	),
 	awful.key(
+		{altkey, 'Control'},
+		'space',
+		function()
+			awful.spawn('vm-attach attach')
+		end,
+		{description = 'Connect kb and mouse to VM', group = 'Utility'}
+	),
+	awful.key(
 		{modkey}, 
 		'Return',
 		function()
