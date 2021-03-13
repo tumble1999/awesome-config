@@ -10,6 +10,7 @@ else
     do
              sleep 1
     done
+    sleep 1
     xclip -selection clipboard -target image/png -i /tmp/screenshot.png
     paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
 fi
