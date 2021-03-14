@@ -1,0 +1,43 @@
+#!/bin/bash
+# NOTE: This script is intended for hardware not supported properly by "light" on laptops
+# PS: THIS IS ONLY INTENDED FOR USE WITH LAPTOP SCREENS!
+SCREEN="LVDS"
+# This is for testing only #
+#SCREEN="DVI-D-1"
+############################
+
+GET_SCREEN=$(xrandr | grep "$SCREEN" | awk '{print $1}')
+SET_COMMAND="xrandr --output $GET_SCREEN --brightness"
+GET_COMMAND=`xrandr --verbose | grep Brightness | awk '{print $2}'`
+
+helptext () {
+    printf "Brightness utility using xrandr as backend.
+    This script works when light is not working properly.
+    
+    USAGE set: laptop-brightness set percentage
+    USAGE get: laptop-brightness get
+    
+    Example: laptop-brightness set 57
+    
+    NOTES: 
+    * lowest percentage = 10
+    * highest percentage = 90"
+}
+
+if [ $# == 0 ]; then
+    helptext
+else
+    if [ "$1" == "set" ]; then
+        if [ $(($2)) -gt 99 ]; then
+            $SET_COMMAND 1.0
+        elif [ $(($2)) -lt 10 ]; then
+            $SET_COMMAND 0.10
+        else
+            $SET_COMMAND 0.$2
+        fi
+    elif [ "$1" == "get" ]; then
+        echo $GET_COMMAND
+    else
+        helptext
+    fi
+fi
