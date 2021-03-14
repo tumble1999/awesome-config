@@ -21,7 +21,7 @@ helptext () {
     
     NOTES: 
     * lowest percentage = 10
-    * highest percentage = 90"
+"
 }
 
 if [ $# == 0 ]; then
