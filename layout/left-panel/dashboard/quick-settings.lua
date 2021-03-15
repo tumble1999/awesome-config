@@ -38,7 +38,7 @@ return wibox.widget {
 			{
 				{
 					layout = wibox.layout.fixed.vertical,
-					require('widget.brightness-slider'),
+					require('widget.brightness-slider_xrandr'),
 					require('widget.volume-slider'),
 					require('widget.airplane-mode'),
 					require('widget.bluetooth-toggle'),
