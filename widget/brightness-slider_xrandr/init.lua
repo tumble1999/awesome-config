@@ -63,7 +63,7 @@ brightness_slider:connect_signal(
 		local brightness_level = brightness_slider:get_value()
 		
 		spawn(utils_dir .. 'laptop-brightness set ' ..
-			math.max(brightness_level, 5),
+			math.max(brightness_level, 10),
 			false
 		)
 
