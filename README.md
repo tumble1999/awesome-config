@@ -43,7 +43,7 @@ This seems to be an issue with the new notification api that uses dbus in awesom
 - (Optional) [Materia](https://github.com/nana-4/materia-theme) as GTK theme
 - (Optional) [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme
 - (Optional) [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
-- (Optional) [Light](https://github.com/haikarainen/light) for adjusting brightness on laptops
+- (Optional) **xrandr** to adjust laptop brightness (LVDS output)
 - (Optional) [Ksnip](https://github.com/ksnip/ksnip) my personal screenshot utility of choice, can be replaced by whichever you want, just remember to edit the screenshot utility script!
 - (Optional) [Redshift](https://github.com/jonls/redshift) For blue light filter
 
