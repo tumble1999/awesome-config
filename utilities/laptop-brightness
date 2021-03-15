@@ -9,7 +9,7 @@ SCREEN="LVDS"
 
 GET_SCREEN=$(xrandr | grep "$SCREEN" | awk '{print $1}')
 SET_COMMAND="xrandr --output $GET_SCREEN --brightness"
-GET_COMMAND=`xrandr --verbose | grep Brightness | awk '{print $2}'`
+GET_COMMAND=`xrandr --verbose | grep -iP "(Brightness| connected)" | perl -pe "s/(\t+| connected.+|Brightness)//g" | perl -pe "s/\n/,/" | perl -pe "s/,:/:/g" | perl -pe "s/,/\n/g" | grep $GET_SCREEN | awk '{print $2}'`
 
 helptext () {
     printf "Brightness utility using xrandr as backend.
