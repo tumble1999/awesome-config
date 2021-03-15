@@ -11,6 +11,9 @@ GET_SCREEN=$(xrandr | grep "$SCREEN" | awk '{print $1}')
 SET_COMMAND="xrandr --output $GET_SCREEN --brightness"
 GET_COMMAND=`xrandr --verbose | grep -iP "(Brightness| connected)" | perl -pe "s/(\t+| connected.+|Brightness)//g" | perl -pe "s/\n/,/" | perl -pe "s/,:/:/g" | perl -pe "s/,/\n/g" | grep $GET_SCREEN | awk '{print $2}'`
 
+# Get the brightness and multiply by 100 to get the percentage then use perl to remove the decimal
+BRIGHTNESS=$(echo "$GET_COMMAND*100" | bc | perl -pe "s/\.\d+$//")
+
 helptext () {
     printf "Brightness utility using xrandr as backend.
     This script works when light is not working properly.
@@ -32,6 +35,7 @@ if [ $# == 0 ]; then
     helptext
 else
     if [ "$1" == "set" ]; then
+        # Set the brightness and make sure we do not go below 10% or above 100%
         if [ $(($2)) -gt 99 ]; then
             $SET_COMMAND 1.0
         elif [ $(($2)) -lt 10 ]; then
@@ -40,7 +44,8 @@ else
             $SET_COMMAND 0.$2
         fi
     elif [ "$1" == "get" ]; then
-        echo $GET_COMMAND
+        # Print brightness
+        echo $BRIGHTNESS
     else
         helptext
     fi
