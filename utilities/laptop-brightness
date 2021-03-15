@@ -34,18 +34,48 @@ helptext () {
 if [ $# == 0 ]; then
     helptext
 else
-    if [ "$1" == "set" ]; then
+    if [ "$1" == "set" ]
+    then
         # Set the brightness and make sure we do not go below 10% or above 100%
-        if [ $(($2)) -gt 99 ]; then
+        if [ $(($2)) -gt 99 ]
+        then
             $SET_COMMAND 1.0
-        elif [ $(($2)) -lt 10 ]; then
+        elif [ $(($2)) -lt 10 ]
+        then
             $SET_COMMAND 0.10
         else
             $SET_COMMAND 0.$2
         fi
-    elif [ "$1" == "get" ]; then
+    elif [ "$1" == "get" ]
+    then
         # Print brightness
         echo $BRIGHTNESS
+    elif [ "$1" == "add" ]
+    then
+        # Increment current brightness
+        NEW_BRIGHTNESS=$(expr $BRIGHTNESS + $2)
+
+        # Set the brightness and make sure we do not go below 10% or above 100%
+        if [ $(($NEW_BRIGHTNESS)) -gt 99 ]; then
+            $SET_COMMAND 1.0
+        elif [ $(($NEW_BRIGHTNESS)) -lt 10 ]; then
+            $SET_COMMAND 0.10
+        else
+            $SET_COMMAND 0.$NEW_BRIGHTNESS
+        fi
+    elif [ "$1" == "sub" ]
+    then
+        # Decrease current brightness
+        NEW_BRIGHTNESS=$(expr $BRIGHTNESS - $2)
+
+        # Set the brightness and make sure we do not go below 10% or above 100%
+        if [ $(($NEW_BRIGHTNESS)) -gt 99 ]; then
+            $SET_COMMAND 1.0
+        elif [ $(($NEW_BRIGHTNESS)) -lt 10 ]; then
+            $SET_COMMAND 0.10
+        else
+            $SET_COMMAND 0.$NEW_BRIGHTNESS
+        fi      
     else
         helptext
     fi
