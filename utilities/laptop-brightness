@@ -2,12 +2,12 @@
 # This is an early version of the script, it is not used in material-awesome yet!
 # NOTE: This script is intended for hardware not supported properly by "light" on laptops
 # PS: THIS IS ONLY INTENDED FOR USE WITH LAPTOP SCREENS!
-SCREEN="LVDS"
+SCREEN="LVDS|eDP"
 # This is for testing only #
 #SCREEN="DVI-D-1"
 ############################
 
-GET_SCREEN=$(xrandr | grep "$SCREEN" | awk '{print $1}')
+GET_SCREEN=$(xrandr | grep -P "($SCREEN)" | awk '{print $1}')
 SET_COMMAND="xrandr --output $GET_SCREEN --brightness"
 GET_COMMAND=`xrandr --verbose | grep -iP "(Brightness| connected)" | perl -pe "s/(\t+| connected.+|Brightness)//g" | perl -pe "s/\n/,/" | perl -pe "s/,:/:/g" | perl -pe "s/,/\n/g" | grep $GET_SCREEN | awk '{print $2}'`
 
