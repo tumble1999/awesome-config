@@ -8,6 +8,9 @@ local hotkeys_popup = require('awful.hotkeys_popup').widget
 local modkey = require('configuration.keys.mod').mod_key
 local altkey = require('configuration.keys.mod').alt_key
 local apps = require('configuration.apps')
+local filesystem = require('gears.filesystem')
+local config_dir = filesystem.get_configuration_dir()
+local utils_dir = config_dir .. 'utilities/'
 
 -- Key bindings
 local global_keys = awful.util.table.join(
@@ -189,7 +192,7 @@ local global_keys = awful.util.table.join(
 		{},
 		'XF86MonBrightnessUp',
 		function()
-			awful.spawn('light -A 10', false)
+			awful.spawn(utils_dir .. 'laptop-brightness add 10', false)
 			awesome.emit_signal('widget::brightness')
 			awesome.emit_signal('module::brightness_osd:show', true)
 		end,
@@ -199,7 +202,7 @@ local global_keys = awful.util.table.join(
 		{},
 		'XF86MonBrightnessDown',
 		function()
-			awful.spawn('light -U 10', false)
+			awful.spawn(config_dir .. 'laptop-brightness sub 10', false)
 			awesome.emit_signal('widget::brightness')
 			awesome.emit_signal('module::brightness_osd:show', true)
 		end,
