@@ -18,13 +18,23 @@ helptext () {
     printf "Brightness utility using xrandr as backend.
     This script works when light is not working properly.
     
-    SET BRIGHTNESS FOR LVDS (Low-Voltage Differential Signaling, or laptop screen)
+    SET BRIGHTNESS FOR LVDS (Low-Voltage Differential Signaling, or laptop screen) or eDP Displays
     USAGE set: laptop-brightness set percentage
 
-    GET BRIGHTNESS FOR ALL DISPLAYS
+    GET BRIGHTNESS FOR LVDS or eDP DISPLAYS
     USAGE get: laptop-brightness get
     
-    Example: laptop-brightness set 57
+    Example set brightness to 57%:
+        laptop-brightness set 57
+
+    INCREASE/DECREASE BRIGHTNESS
+    USAGE: laptop-brightness add|sub int
+
+    Example increase brightness by 10%: 
+        laptop-brightness add 10
+
+    Example decrease brightness by 10%: 
+        laptop-brightness sub 10
     
     NOTES: 
     * lowest percentage = 10
