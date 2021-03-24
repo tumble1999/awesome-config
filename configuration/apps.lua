@@ -14,7 +14,7 @@ return {
 		-- Default file manager
 		file_manager = 'nautilus',
 		-- Default media player
-		multimedia = 'vlc',
+		multimedia = 'celluloid',
 		-- Default game, can be a launcher like steam
 		game = 'env steam',
 		-- Default graphics editor
