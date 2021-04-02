@@ -70,8 +70,7 @@ ruled.client.connect_signal(
 				type  = {'dialog'},
 				class = {
 					'Wicd-client.py',
-					'calendar.google.com',
-					'scrcpy'
+					'calendar.google.com'
 				}
 			},
 			properties = {
@@ -129,6 +128,20 @@ ruled.client.connect_signal(
 
 				-- Make the window stick to ALL tags/workspaces (this is what lets you toggle it on all tags)
 				sticky = true
+			}
+		}
+
+		-- Floating windows
+		ruled.client.append_rule {
+			id = 'floatingwindows',
+			rule_any = {
+				class = {
+					'scrcpy'
+				}
+			},
+			properties = {
+				-- Make the window floating
+				floating = true
 			}
 		}
 
