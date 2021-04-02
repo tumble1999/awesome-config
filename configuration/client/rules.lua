@@ -49,7 +49,7 @@ ruled.client.connect_signal(
 
 		-- Titlebar rules
 		ruled.client.append_rule {
-			id 		= 'titlebars',
+			id 	= 'titlebars',
 			rule_any = {
 				type = {
 					'normal',
@@ -68,7 +68,11 @@ ruled.client.connect_signal(
 			id = 'dialog',
 			rule_any = {
 				type  = {'dialog'},
-				class = {'Wicd-client.py', 'calendar.google.com'}
+				class = {
+					'Wicd-client.py',
+					'calendar.google.com',
+					'scrcpy'
+				}
 			},
 			properties = {
 				titlebars_enabled = false,
