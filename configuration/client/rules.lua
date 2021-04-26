@@ -171,12 +171,12 @@ ruled.client.connect_signal(
 					'Lutris',
 					'Citra',
 					'supertuxkart',
-					'moonlight'
+					'Moonlight'
 				},
 				name = {
 					'Steam',
 					'Lutris',
-					'moonlight'
+					'Moonlight'
 				}
 			},
 			properties = {
