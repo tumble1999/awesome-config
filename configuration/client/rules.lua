@@ -152,8 +152,7 @@ ruled.client.connect_signal(
 			id = 'looking-glass',
 			rule_any = {
 				class = {
-					'looking-glass-client',
-					'Virt-manager'
+					'looking-glass-client'
 				}
 			},
 			properties = {
