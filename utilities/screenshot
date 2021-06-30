@@ -18,7 +18,7 @@ else
     sleep 1
     xclip -selection clipboard -target image/png -i /tmp/screenshot.png
     paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
-    kill $(pgrep -nx dbus-daemon)
+    kill $(pgrep -f dbus-daemon --syslog --fork --print-pid 5 --print-address 7 --session)
     kill $(pgrep -f "dbus-launch --exit-with-session ksnip")
 fi
 
