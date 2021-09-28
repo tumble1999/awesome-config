@@ -113,9 +113,9 @@ return {
 	-- List of binaries/shell scripts that will execute for a certain task
 	utils = {
 		-- Hikari's screenshot utilities (requires ksnip to be installed)
-		screenshot = utils_dir .. 'screenshot -m -s',
-		region_screenshot = utils_dir .. 'screenshot -r -s',
-		delayed_screenshot = utils_dir .. 'screenshot -d 10 -r',
+		screenshot = utils_dir .. 'screenshot -m -b',
+		region_screenshot = utils_dir .. 'screenshot -r -b',
+		delayed_screenshot = utils_dir .. 'screenshot --delayed -r',
 		ss_and_edit_screenshot = utils_dir .. 'screenshot -r',
 
 		-- Other screenshot utilities using maim
