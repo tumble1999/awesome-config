@@ -4,6 +4,13 @@ local icons = require('theme.icons')
 local apps = require('configuration.apps')
 
 local tags = {
+
+  {
+    icon = icons.tumble,
+    type = 'any',
+    defaultApp = apps.default.rofi,
+    screen = 1
+  },
   {
     icon = icons.chrome,
     type = 'chrome',
@@ -31,7 +38,7 @@ local tags = {
   {
     icon = icons.vm,
     type = 'vms',
-    defaultApp = apps.default.game,
+    defaultApp = apps.default.vm,
     screen = 1
   },
   {
@@ -46,18 +53,12 @@ local tags = {
     defaultApp = apps.default.music,
     screen = 1
   },
-  {
-    icon = icons.lab,
-    type = 'any',
-    defaultApp = apps.default.rofi,
-    screen = 1
-  }
 }
 
 awful.layout.layouts = {
-  awful.layout.suit.tile,
   awful.layout.suit.max,
-  awful.layout.suit.floating
+  awful.layout.suit.tile,
+  --awful.layout.suit.floating
 }
 
 awful.screen.connect_for_each_screen(
@@ -68,7 +69,7 @@ awful.screen.connect_for_each_screen(
         {
           icon = tag.icon,
           icon_only = true,
-          layout = awful.layout.suit.tile,
+          layout = awful.layout.suit.max,
           gap_single_client = false,
           gap = 4,
           screen = s,

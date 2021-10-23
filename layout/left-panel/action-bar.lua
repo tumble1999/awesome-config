@@ -32,7 +32,7 @@ return function(screen, panel, action_bar_width)
   local menu_icon =
     wibox.widget {
     icon = icons.menu,
-    size = dpi(24),
+    size = 16,
     widget = mat_icon
   }
 
@@ -40,11 +40,14 @@ return function(screen, panel, action_bar_width)
     wibox.widget {
     wibox.widget {
       menu_icon,
-      widget = clickable_container
+      widget = clickable_container,
+      forced_height=35
     },
     bg = beautiful.primary.hue_500,
     widget = wibox.container.background
   }
+
+
 
   home_button:buttons(
     gears.table.join(
@@ -92,9 +95,9 @@ return function(screen, panel, action_bar_width)
       wibox.container.margin(systray, dpi(10), dpi(10)),
       --require('widget.package-updater'),
       --require('widget.wifi'),
-      require('widget.battery'),
+      --require('widget.battery'),
       -- Clock
-      --clock_widget
+      -- clock_widget
     }
   }
 end

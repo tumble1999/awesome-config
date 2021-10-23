@@ -12,7 +12,7 @@ local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('theme.icons')
 
 -- Clock / Calendar 24h format
-local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
+local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%I:%M %p %d/%m/%Y </span>')
 
 -- Clock / Calendar 12AM/PM fornat
 -- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n  %I:%M %p</span>\n<span font="Roboto Mono bold 9">%p</span>')
@@ -90,14 +90,14 @@ end
 local TopPanel = function(s, offset)
   local offsetx = 0
   if offset == true then
-    offsetx = dpi(48)
+    offsetx = 48 -- dpi(48)
   end
   local panel =
     wibox(
     {
       ontop = true,
       screen = s,
-      height = dpi(48),
+      height = 35, -- dpi(48),
       width = s.geometry.width - offsetx,
       x = s.geometry.x + offsetx,
       y = s.geometry.y,
@@ -105,14 +105,14 @@ local TopPanel = function(s, offset)
       bg = beautiful.background.hue_800,
       fg = beautiful.fg_normal,
       struts = {
-        top = dpi(48)
+        top = 48 -- dpi(48)
       }
     }
   )
 
   panel:struts(
     {
-      top = dpi(48)
+      top = 35 -- dpi(48)
     }
   )
 

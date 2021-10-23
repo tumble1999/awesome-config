@@ -38,19 +38,11 @@ local globalKeys =
     {modkey},
     'r',
     function()
-      _G.screen.primary.left_panel:toggle(true)
+      awful.spawn(apps.default.rofi)
     end,
     {description = 'show main menu', group = 'awesome'}
   ),
-  awful.key(
-    {altkey},
-    'space',
-    function()
-      _G.screen.primary.left_panel:toggle(true)
-    end,
-    {description = 'show main menu', group = 'awesome'}
-  ),
-  awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
+  --awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(
     {altkey},
     'Tab',
@@ -132,19 +124,28 @@ local globalKeys =
     end,
     {description = 'open a browser', group = 'launcher'}
   ),
-  -- Open private browser/brave
+  -- Open private browser
   awful.key(
     {modkey},
     'p',
     function()
-      awful.util.spawn_with_shell('brave-browser')
+      awful.util.spawn_with_shell('brave-browser --incognito')
     end,
-    {description = 'Open Brave', group = 'launcher'}
+    {description = 'Open Brave Incognito', group = 'launcher'}
+  ),
+  -- Open tor browser
+  awful.key(
+    {modkey},
+    't',
+    function()
+      awful.util.spawn_with_shell('brave-browser --incognito --tor')
+    end,
+    {description = 'Open Tor', group = 'launcher'}
   ),
   -- Standard program
   awful.key(
-    {modkey},
-    'x',
+    {'Ctrl',altkey},
+    't',
     function()
       awful.util.spawn_with_shell(apps.default.terminal)
     end,
@@ -152,129 +153,6 @@ local globalKeys =
   ),
   awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
-  awful.key(
-    {altkey, 'Shift'},
-    'Right',
-    function()
-      awful.tag.incmwfact(0.05)
-    end,
-    {description = 'increase master width factor', group = 'layout'}
-  ),
-  awful.key(
-    {altkey, 'Shift'},
-    'Left',
-    function()
-      awful.tag.incmwfact(-0.05)
-    end,
-    {description = 'decrease master width factor', group = 'layout'}
-  ),
-  awful.key(
-    {altkey, 'Shift'},
-    'Down',
-    function()
-      awful.client.incwfact(0.05)
-    end,
-    {description = 'decrease master height factor', group = 'layout'}
-  ),
-  awful.key(
-    {altkey, 'Shift'},
-    'Up',
-    function()
-      awful.client.incwfact(-0.05)
-    end,
-    {description = 'increase master height factor', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Shift'},
-    'Left',
-    function()
-      awful.tag.incnmaster(1, nil, true)
-    end,
-    {description = 'increase the number of master clients', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Shift'},
-    'Right',
-    function()
-      awful.tag.incnmaster(-1, nil, true)
-    end,
-    {description = 'decrease the number of master clients', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Control'},
-    'Left',
-    function()
-      awful.tag.incncol(1, nil, true)
-    end,
-    {description = 'increase the number of columns', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Control'},
-    'Right',
-    function()
-      awful.tag.incncol(-1, nil, true)
-    end,
-    {description = 'decrease the number of columns', group = 'layout'}
-  ),
-  awful.key(
-    {modkey},
-    'space',
-    function()
-      awful.layout.inc(1)
-    end,
-    {description = 'select next', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Shift'},
-    'space',
-    function()
-      awful.layout.inc(-1)
-    end,
-    {description = 'select previous', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Control'},
-    'n',
-    function()
-      local c = awful.client.restore()
-      -- Focus restored client
-      if c then
-        _G.client.focus = c
-        c:raise()
-      end
-    end,
-    {description = 'restore minimized', group = 'client'}
-  ),
-  -- Dropdown application
-  awful.key(
-    {modkey},
-    'z',
-    function()
-      _G.toggle_quake()
-    end,
-    {description = 'dropdown application', group = 'launcher'}
-  ),
-  -- Widgets popups
-  --[[awful.key(
-    {altkey},
-    'h',
-    function()
-      if beautiful.fs then
-        beautiful.fs.show(7)
-      end
-    end,
-    {description = 'show filesystem', group = 'widgets'}
-  ),
-  awful.key(
-    {altkey},
-    'w',
-    function()
-      if beautiful.weather then
-        beautiful.weather.show(7)
-      end
-    end,
-    {description = 'show weather', group = 'widgets'}
-  ),--]]
   -- Brightness
   awful.key(
     {},
@@ -351,7 +229,7 @@ local globalKeys =
   -- Open default program for tag
   awful.key(
     {modkey},
-    't',
+    'n',
     function()
       awful.spawn(
           awful.screen.focused().selected_tag.defaultApp,
