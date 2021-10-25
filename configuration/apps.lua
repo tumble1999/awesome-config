@@ -44,7 +44,8 @@ return {
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     'xscreensaver',
+    'kdeconnect-indicator',
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
-    '~/setup-audio.sh'
+    '~/setup-audio.sh',
   }
 }
