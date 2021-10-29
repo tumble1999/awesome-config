@@ -11,12 +11,15 @@ local dpi = require('beautiful').xresources.apply_dpi
 
 local icons = require('theme.icons')
 
--- Clock / Calendar 24h format
-local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%I:%M %p %d/%m/%Y </span>')
+-- SysTray
+local systray = wibox.widget.systray()
+  systray:set_horizontal(true)
+  systray:set_base_size(50)
+  systray.forced_height = 50
 
 -- Clock / Calendar 12AM/PM fornat
--- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n  %I:%M %p</span>\n<span font="Roboto Mono bold 9">%p</span>')
--- textclock.forced_height = 56
+local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d/%m/%Y\n  %I:%M %p</span>\n<span font="Roboto Mono bold 9">%p</span>')
+textclock.forced_height = 56
 
 -- Add a calendar (credits to kylekewley for the original code)
 local month_calendar = awful.widget.calendar_popup.month({
@@ -26,7 +29,8 @@ local month_calendar = awful.widget.calendar_popup.month({
 })
 month_calendar:attach(textclock)
 
-local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(8), dpi(8))
+local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(4), dpi(4))
+local systray_widget = wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3))
 
 local add_button = mat_icon_button(mat_icon(icons.plus, dpi(24)))
 add_button:buttons(
@@ -127,9 +131,8 @@ local TopPanel = function(s, offset)
     nil,
     {
       layout = wibox.layout.fixed.horizontal,
-      -- Clock
+      systray_widget,
       clock_widget,
-      -- Layout box
       LayoutBox(s)
     }
   }
