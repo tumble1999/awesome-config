@@ -14,8 +14,8 @@ local icons = require('theme.icons')
 -- SysTray
 local systray = wibox.widget.systray()
   systray:set_horizontal(true)
-  systray:set_base_size(50)
-  systray.forced_height = 50
+  systray:set_base_size(20)
+  systray.forced_height = 20
 
 -- Clock / Calendar 12AM/PM fornat
 local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d/%m/%Y\n  %I:%M %p</span>\n<span font="Roboto Mono bold 9">%p</span>')

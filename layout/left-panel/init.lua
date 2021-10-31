@@ -7,6 +7,7 @@ local dpi = require('beautiful').xresources.apply_dpi
 local left_panel = function(screen)
   local action_bar_width =  48 -- dpi(48)
   local panel_content_width = dpi(400)
+  
 
   local panel =
     wibox {

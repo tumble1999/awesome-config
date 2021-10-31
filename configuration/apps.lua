@@ -31,21 +31,22 @@ return {
   -- List of apps to start once on start-up
   run_on_start_up = {
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
-    'nm-applet --indicator', -- wifi
+    -- 'nm-applet --indicator', -- wifi
     'blueberry-tray', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
     'ibus-daemon --xim --daemonize', -- Ibus daemon for keyboard
     'scream-start', -- scream audio sink
     'numlockx on', -- enable numlock
-    '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
+    -- '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     --'/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
-    'blueman-tray', -- bluetooth tray
-    -- 'thunderbird --hidden', -- Email client
+    -- 'blueman-tray', -- bluetooth tray
+    'thunderbird', -- Email client
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     'xscreensaver',
-    'kdeconnect-indicator',
+    'sleep 5 && kdeconnect-indicator',
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
     '~/setup-audio.sh',
+    'keepassxc',
   }
 }
