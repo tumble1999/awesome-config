@@ -59,10 +59,10 @@ return {
 		config_dir .. '/configuration/picom.conf',
 
 		-- network applet for network connections
-		'nm-applet --indicator',
+		'nm-applet --indicator > /dev/null',
 		
 		-- Blueman applet
-		'blueman-applet',
+		'blueman-applet > /dev/null',
 		
 		-- ibus keyboard daemon for keyboard management and emoji typing
 		'ibus-daemon --xim --daemonize',
@@ -105,7 +105,7 @@ return {
 		-- Spawn "dirty" apps that can linger between sessions
 		-- It is suggested you copy the contents of awspawn into ~/.config/awesomestart
 		-- then remove the "$HOME/.config/awesomestart" line from the APPS array
-		'~/.config/awesome/configuration/awspawn'
+		'~/.config/awesome/configuration/awspawn > /dev/null'
 
 		-- You can add more start-up applications here
 	},
