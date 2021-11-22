@@ -324,7 +324,10 @@ local global_keys = awful.util.table.join(
     	{'Shift'},
     	'Print',
     	function()
-    		awful.util.spawn_with_shell(apps.utils.delayed_screenshot)
+			awful.spawn.easy_async_with_shell(apps.utils.delayed_screenshot,
+			function()
+			end
+		)
     	end,
     	{description = 'Wait 10 seconds then mark an area and screenshot it and copy it to the clipboard', group = 'Utility'}
 	),
@@ -332,7 +335,10 @@ local global_keys = awful.util.table.join(
 		{ },
 		'Print',
 		function()
-			awful.util.spawn_with_shell(apps.utils.screenshot)
+			awful.spawn.easy_async_with_shell(apps.utils.screenshot,
+			function()
+			end
+		)
 		end,
 		{description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'Utility'}
 	),
@@ -340,7 +346,10 @@ local global_keys = awful.util.table.join(
 		{'Control'},
 		'Print',
 		function()
-			awful.util.spawn_with_shell(apps.utils.region_screenshot)
+			awful.spawn.easy_async_with_shell(apps.utils.region_screenshot,
+			function()
+			end
+		)
 		end,
 		{description = 'Mark an area and screenshot it to your clipboard', group = 'Utility'}
 	),
@@ -348,7 +357,10 @@ local global_keys = awful.util.table.join(
 		{modkey},
 		'Print',
 		function()
-			awful.util.spawn_with_shell(apps.utils.ss_and_edit_screenshot)
+			awful.spawn.easy_async_with_shell(apps.utils.ss_and_edit_screenshot,
+			function()
+			end
+		)
 		end,
 		{description = 'Mark an area and screenshot it and edit it', group = 'Utility'}
 	),
