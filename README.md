@@ -39,6 +39,7 @@ This seems to be an issue with the new notification api that uses dbus in awesom
 - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) the lockscreen application
 - [xclip](https://github.com/astrand/xclip) for copying screenshots to clipboard
 - __gnome-keyring-daemon__ and a __policykit-agent__ (by default policykit-1-gnome is enabled)
+- [kitty](https://github.com/kovidgoyal/kitty) as terminal emulator
 - (Optional) __qt5-styles-gtk2__ or __qt5-styles-plugins__ for making QT and KDE applications look the same as gnome applications (standalone QT applications will still show up using their default theme, this cannot be fixed!)
 - (Optional) [Materia](https://github.com/nana-4/materia-theme) as GTK theme
 - (Optional) [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme
