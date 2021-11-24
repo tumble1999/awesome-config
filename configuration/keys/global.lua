@@ -33,6 +33,15 @@ local global_keys = awful.util.table.join(
 		awesome.quit, 
 		{description = 'quit awesome', group = 'awesome'}
 	),
+
+	awful.key({'Control', altkey}, 
+		'Delete', 
+		function()
+			awesome.emit_signal('module::exit_screen:show')
+		end,
+		{description = 'Show end session screen', group = 'awesome'}
+	),
+
 	awful.key(
 		{altkey, 'Shift'},
 		'l',
