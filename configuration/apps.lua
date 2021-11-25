@@ -6,7 +6,7 @@ return {
 	-- The default applications that we will use in keybindings and widgets
 	default = {
 		-- Default terminal emulator
-		terminal = 'env kitty -T=$USER@$(hostname)',
+		terminal = 'env kitty -T="Kitty Terminal"',
 		-- Default web browser
 		web_browser = 'env brave-browser',
 		-- Default text editor
