@@ -101,6 +101,9 @@ return {
 
 		-- Set brightness to 50% on LVDS output because my laptop battery is bad
 		utils_dir .. 'laptop-brightness set 50',
+
+		-- Load users custom xmodmap if they have one
+		'xmodmap $HOME/.Xmodmap',
 		
 		-- Spawn "dirty" apps that can linger between sessions
 		-- It is suggested you copy the contents of awspawn into ~/.config/awesomestart

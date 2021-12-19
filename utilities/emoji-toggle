@@ -11,3 +11,6 @@ else
     ibus engine $ibus_default_layout
     setxkbmap $layout
 fi
+
+# Load users custom xmodmap
+xmodmap $HOME/.Xmodmap
