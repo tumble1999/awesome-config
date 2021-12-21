@@ -20,11 +20,11 @@ return {
     
     -- Editing these also edits the default program
     -- associated with each tag/workspace
-    browser = 'brave-browser',
+    browser = 'brave',
     editor = 'codium', -- gui text editor
     social = 'discord',
     vm = 'virt-manager',
-    game = 'lutris',
+    game = 'steam',
     files = 'caja',
     music = 'spotify'
   },
@@ -46,7 +46,9 @@ return {
     'xscreensaver',
     'sleep 5 && kdeconnect-indicator',
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
-    '~/setup-audio.sh',
+    'pipewire',
+    'pipewire-pulse',
+  -- '~/setup-audio.sh',
     'keepassxc',
   }
 }
