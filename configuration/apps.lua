@@ -32,7 +32,8 @@ return {
   run_on_start_up = {
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
     -- 'nm-applet --indicator', -- wifi
-    'blueberry-tray', -- Bluetooth tray icon
+    -- 'blueberry-tray', -- Bluetooth tray icon
+    'blueman-applet', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
     'ibus-daemon --xim --daemonize', -- Ibus daemon for keyboard
     'scream-start', -- scream audio sink
@@ -48,6 +49,7 @@ return {
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
     'pipewire',
     'pipewire-pulse',
+    'pipewire',
   -- '~/setup-audio.sh',
     'keepassxc',
   }
