@@ -22,7 +22,8 @@ return {
     -- associated with each tag/workspace
     browser = 'brave',
     editor = 'codium', -- gui text editor
-    social = 'discord',
+   -- social = 'discord',
+    social = 'element-desktop',
     vm = 'virt-manager',
     game = 'steam',
     files = 'caja',
@@ -30,27 +31,26 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
-    -- 'nm-applet --indicator', -- wifi
-    -- 'blueberry-tray', -- Bluetooth tray icon
-    'blueman-applet', -- Bluetooth tray icon
-    --'xfce4-power-manager', -- Power manager
+    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf', -- Composite
     'ibus-daemon --xim --daemonize', -- Ibus daemon for keyboard
     'scream-start', -- scream audio sink
     'numlockx on', -- enable numlock
+    'udiskie --no-automount --smart-tray',
+    'blueman-applet', -- Bluetooth tray icon
+    '/usr/lib/mate-polkit/polkit-mate-authentication-agent-1', -- Polkit agent
     -- '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     --'/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
-    -- 'blueman-tray', -- bluetooth tray
     'thunderbird', -- Email client
-    -- Add applications that need to be killed between reloads
-    -- to avoid multipled instances, inside the awspawn script
     'xscreensaver',
     'sleep 5 && kdeconnect-indicator',
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
     'pipewire',
+    'pipewire-media-session',
+--    'wireplumber',
+    'pipewire-alsa',
     'pipewire-pulse',
-    'pipewire',
   -- '~/setup-audio.sh',
     'keepassxc',
+    'keybase'
   }
 }
