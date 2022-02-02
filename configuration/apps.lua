@@ -1,4 +1,6 @@
 local filesystem = require('gears.filesystem')
+local config_dir = filesystem.get_configuration_dir()
+local utils_dir = config_dir .. 'utilities/'
 
 -- Thanks to jo148 on github for making rofi dpi aware!
 local with_dpi = require('beautiful').xresources.apply_dpi
@@ -8,15 +10,14 @@ local rofi_command = 'env /usr/bin/rofi -dpi ' .. get_dpi() .. ' -width ' .. wit
 return {
   -- List of apps to start by default on some actions
   default = {
-    -- terminal = 'env x-terminal-emulator -e /usr/bin/env TERM=xterm-256color byobu',
     terminal = 'mate-terminal',
     rofi = rofi_command,
     lock = 'i3lock-fancy',
     quake = 'alacritty',
-    screenshot = 'screenshot -m -s', --'~/.config/awesome/configuration/utils/screenshot -m',
-    region_screenshot = 'screenshot -r -s', --'~/.config/awesome/configuration/utils/screenshot -r',
-    delayed_screenshot = 'screenshot -d 10 -r', --'~/.config/awesome/configuration/utils/screenshot --delayed -r',
-    ss_and_edit_screenshot = 'screenshot -r',
+    -- screenshot = 'flameshot gui', --'~/.config/awesome/configuration/utils/screenshot -m',
+    -- region_screenshot = 'screenshot -r -s', --'~/.config/awesome/configuration/utils/screenshot -r',
+    -- delayed_screenshot = 'screenshot -d 10 -r', --'~/.config/awesome/configuration/utils/screenshot --delayed -r',
+    -- ss_and_edit_screenshot = 'screenshot -r',
     
     -- Editing these also edits the default program
     -- associated with each tag/workspace
@@ -31,26 +32,18 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf', -- Composite
+    'picom -b --experimental-backends --dbus --config ' .. config_dir .. '/configuration/picom.conf', -- Composite
     'ibus-daemon --xim --daemonize', -- Ibus daemon for keyboard
     'scream-start', -- scream audio sink
     'numlockx on', -- enable numlock
     'udiskie --no-automount --smart-tray',
     'blueman-applet', -- Bluetooth tray icon
     '/usr/lib/mate-polkit/polkit-mate-authentication-agent-1', -- Polkit agent
-    -- '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
-    --'/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
-    'thunderbird', -- Email client
+    'thunderbird60', -- Email client
     'xscreensaver',
     'sleep 5 && kdeconnect-indicator',
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
-    'pipewire',
-    'pipewire-media-session',
---    'wireplumber',
-    'pipewire-alsa',
-    'pipewire-pulse',
+    'flameshot', -- screenshot
   -- '~/setup-audio.sh',
-    'keepassxc',
-    'keybase'
   }
 }
